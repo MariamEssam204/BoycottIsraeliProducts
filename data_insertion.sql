@@ -1,0 +1,112 @@
+-- Insert data into Category table
+INSERT INTO Category (name, description) VALUES
+('Beverages', 'Various drinks including sodas, juices, and water'),
+('Fast Food', 'Quick service restaurant chains and food products'),
+('Clothing', 'Apparel and fashion items'),
+('Electronics', 'Consumer electronics and gadgets'),
+('Personal Care', 'Beauty and hygiene products'),
+('Snacks', 'Chips, cookies, and other snack foods'),
+('Household', 'Cleaning and home care products'),
+('Dairy', 'Milk, cheese, and yogurt products'),
+('Baby Products', 'Items for infant care'),
+('Pet Food', 'Food and treats for pets'),
+('Organic Foods', 'Natural and organic food products');
+GO
+
+-- Insert data into Brand table
+INSERT INTO Brand (name, is_boycott, country_of_origin, logo_url) VALUES
+('Coca-Cola', 1, 'USA', 'https://logo.clearbit.com/coca-cola.com'),
+('Pepsi', 1, 'USA', 'https://logo.clearbit.com/pepsi.com'),
+('McDonalds', 1, 'USA', 'https://logo.clearbit.com/mcdonalds.com'),
+('Starbucks', 1, 'USA', 'https://logo.clearbit.com/starbucks.com'),
+('Nestle', 1, 'Switzerland', 'https://logo.clearbit.com/nestle.com'),
+('Pampers', 1, 'USA', 'https://logo.clearbit.com/pampers.com'),
+('Lays', 1, 'USA', 'https://logo.clearbit.com/pepsico.com'),
+('Doritos', 1, 'USA', 'https://logo.clearbit.com/pepsico.com'),
+('HP', 1, 'USA', 'https://logo.clearbit.com/hp.com'),
+('Puma', 1, 'Germany', 'https://logo.clearbit.com/puma.com'),
+('Ahoy', 0, 'Egypt', 'https://www.ahoy.com.eg/wp-content/uploads/2021/01/ahoy-logo.png'),
+('Almarai', 0, 'Saudi Arabia', 'https://logo.clearbit.com/almarai.com'),
+('Panda', 0, 'Saudi Arabia', 'https://logo.clearbit.com/panda.sa'),
+('Kayan', 0, 'Egypt', 'https://kayanegypt.com/wp-content/uploads/2021/03/logo-1.png'),
+('Teeba', 0, 'Jordan', 'https://www.teeba.com/wp-content/uploads/2021/06/Teeba-Logo.png'),
+('Zamzam', 0, 'Saudi Arabia', 'https://www.zamzam.com/logo.png');
+GO
+
+-- Insert boycott reasons
+INSERT INTO BoycottReasons (title, details, source_url, brand_id) VALUES
+('Supports Israeli occupation', 'Coca-Cola has invested millions in Israeli businesses and operates plants in illegal settlements', 'https://bdsmovement.net/news/coca-cola-profits-israeli-occupation', 1),
+('PepsiCo invests in Israel', 'PepsiCo has significant investments in Israel and partnerships with Israeli companies', 'https://bdsmovement.net/pepsico', 2),
+('McDonalds donations to Israel', 'McDonalds donated free meals to Israeli military forces during attacks on Gaza', 'https://www.middleeasteye.net/news/mcdonalds-israel-palestine-free-meals-idf', 3),
+('Starbucks pro-Israel stance', 'Starbucks CEO has publicly supported Israel and the company has been accused of anti-Palestinian bias', 'https://electronicintifada.net/content/starbucks-ceo-howard-schultz-backs-israel/11866', 4),
+('Nestle operates in illegal settlements', 'Nestle operates a factory in an illegal Israeli settlement in the West Bank', 'https://www.theguardian.com/business/2022/feb/10/nestle-israeli-settlement-factory-boycott', 5),
+('Pampers parent company supports Israel', 'Procter & Gamble (Pampers parent) has significant investments in Israel', 'https://bdsmovement.net/pg', 6),
+('Lays parent company in Israel', 'PepsiCo (Lays parent) has extensive business operations in Israel', 'https://bdsmovement.net/pepsico', 7),
+('Doritos supports Israeli military', 'PepsiCo (Doritos parent) has partnerships with Israeli military suppliers', 'https://bdsmovement.net/pepsico', 8),
+('HP provides technology to Israeli military', 'HP provides biometric identification systems used at Israeli checkpoints', 'https://bdsmovement.net/hp', 9),
+('Puma sponsors Israeli football association', 'Puma sponsors the Israel Football Association which includes teams in illegal settlements', 'https://bdsmovement.net/puma', 10),
+('Test Reason', 'This is a test boycott reason', 'https://example.com', 1);
+GO
+
+-- Insert products
+INSERT INTO Product (name, brand_id, product_image, category_id) VALUES
+('Zamzam Cola', 16, 'https://www.zamzam.com/cola.png', 1),
+('Coca-Cola Classic', 1, 'https://www.coca-colacompany.com/content/dam/journey/us/en/private/2021/10/20211015-coca-cola-original-20oz.rendition.598.336.jpg', 1),
+('Sprite', 1, 'https://www.coca-colacompany.com/content/dam/journey/us/en/private/2021/10/20211015-sprite-20oz.rendition.598.336.jpg', 1),
+('Fanta Orange', 1, 'https://www.coca-colacompany.com/content/dam/journey/us/en/private/2021/10/20211015-fanta-orange-20oz.rendition.598.336.jpg', 1),
+('Diet Coke', 1, 'https://www.coca-colacompany.com/content/dam/journey/us/en/private/2021/10/20211015-diet-coke-20oz.rendition.598.336.jpg', 1),
+('Pepsi Cola', 2, 'https://www.pepsi.com/en-us/uploads/images/can-pepsi.png', 1),
+('Mountain Dew', 2, 'https://www.pepsi.com/en-us/uploads/images/can-mountain-dew.png', 1),
+('7UP', 2, 'https://www.7up.com/en/-/media/Project/7Up/7Upcom/7up-com/Images/Products/7up_12oz_can.png', 1),
+('Mirinda', 2, 'https://www.pepsi.com/en-us/uploads/images/mirinda-orange.png', 1),
+('Big Mac', 3, 'https://www.mcdonalds.com/is/image/content/dam/usa/nfl/assets/meal/desktop/t-mcdonalds-Big-Mac.jpg', 2),
+('McChicken', 3, 'https://www.mcdonalds.com/is/image/content/dam/usa/nfl/assets/meal/desktop/t-mcdonalds-McChicken.jpg', 2),
+('French Fries', 3, 'https://www.mcdonalds.com/is/image/content/dam/usa/nfl/assets/meal/desktop/t-mcdonalds-Fries-Medium.jpg', 2),
+('Apple Pie', 3, 'https://www.mcdonalds.com/is/image/content/dam/usa/nfl/assets/meal/desktop/t-mcdonalds-Apple-Pie.jpg', 2),
+('Caramel Frappuccino', 4, 'https://globalassets.starbucks.com/assets/f12bc8af498d45ed92c5d6f1dac64062.jpg', 1),
+('Pumpkin Spice Latte', 4, 'https://globalassets.starbucks.com/assets/2d52f16a22fb40ff898be1815ecc952e.jpg', 1),
+('Green Tea Latte', 4, 'https://globalassets.starbucks.com/assets/9a6fb8099c2e438d838b92a2a1a8a41d.jpg', 1),
+('Caffe Mocha', 4, 'https://globalassets.starbucks.com/assets/ee63434ac3e8435f85d5e8881d1f7a4b.jpg', 1),
+('Nescafe Classic', 5, 'https://www.nestle-middleeast.com/sites/g/files/pydnoa536/files/2021-12/nescafe-classic-red-jar-front_0.png', 1),
+('KitKat', 5, 'https://www.nestle-middleeast.com/sites/g/files/pydnoa536/files/2021-12/kitkat-2-finger-milk-packshot.png', 6),
+('Maggi Noodles', 5, 'https://www.nestle-middleeast.com/sites/g/files/pydnoa536/files/2021-12/maggi-noodles-chicken-packshot.png', 6),
+('Nido Milk', 5, 'https://www.nestle-middleeast.com/sites/g/files/pydnoa536/files/2021-12/nido-1-plus-front_0.png', 8),
+('Pampers Premium Care', 6, 'https://images-na.ssl-images-amazon.com/images/I/71ZxXFZgBxL._AC_SL1500_.jpg', 9),
+('Pampers Active Baby', 6, 'https://images-na.ssl-images-amazon.com/images/I/71Vz3LqJw2L._AC_SL1500_.jpg', 9),
+('Pampers Baby Dry', 6, 'https://images-na.ssl-images-amazon.com/images/I/71Vz3LqJw2L._AC_SL1500_.jpg', 9),
+('Lays Classic', 7, 'https://www.pepsico.com/images/lays-classic-potato-chips.png', 6),
+('Lays Barbecue', 7, 'https://www.pepsico.com/images/lays-barbecue-potato-chips.png', 6),
+('Lays Salt & Vinegar', 7, 'https://www.pepsico.com/images/lays-salt-vinegar-potato-chips.png', 6),
+('Doritos Nacho Cheese', 8, 'https://www.pepsico.com/images/doritos-nacho-cheese.png', 6),
+('Doritos Cool Ranch', 8, 'https://www.pepsico.com/images/doritos-cool-ranch.png', 6),
+('Doritos Spicy Sweet Chili', 8, 'https://www.pepsico.com/images/doritos-spicy-sweet-chili.png', 6),
+('HP Pavilion Laptop', 9, 'https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c07962448.png', 4),
+('HP OfficeJet Printer', 9, 'https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c07962448.png', 4),
+('HP EliteBook', 9, 'https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c07962448.png', 4),
+('Puma RS-X Sneakers', 10, 'https://images.puma.net/images/376159/01/sv01/fnd/MEX/', 3),
+('Puma T-Shirt', 10, 'https://images.puma.net/images/376159/01/sv01/fnd/MEX/', 3),
+('Puma Backpack', 10, 'https://images.puma.net/images/376159/01/sv01/fnd/MEX/', 3),
+('Ahoy Cola', 11, 'https://www.ahoy.com.eg/wp-content/uploads/2021/01/ahoy-cola.png', 1),
+('Ahoy Lemon', 11, 'https://www.ahoy.com.eg/wp-content/uploads/2021/01/ahoy-lemon.png', 1),
+('Ahoy Orange', 11, 'https://www.ahoy.com.eg/wp-content/uploads/2021/01/ahoy-orange.png', 1),
+('Almarai Juice', 12, 'https://www.almarai.com/wp-content/uploads/2020/06/juice-mango.png', 1),
+('Almarai Milk', 12, 'https://www.almarai.com/wp-content/uploads/2020/06/fresh-milk.png', 8),
+('Almarai Yogurt', 12, 'https://www.almarai.com/wp-content/uploads/2020/06/yogurt-strawberry.png', 8),
+('Panda Cheese', 13, 'https://www.panda.sa/wp-content/uploads/2020/06/panda-cheese.png', 8),
+('Panda Butter', 13, 'https://www.panda.sa/wp-content/uploads/2020/06/panda-butter.png', 8),
+('Kayan Juice', 14, 'https://kayanegypt.com/wp-content/uploads/2021/03/mango-1.png', 1),
+('Kayan Nectar', 14, 'https://kayanegypt.com/wp-content/uploads/2021/03/guava-1.png', 1),
+('Teeba Cheese', 15, 'https://www.teeba.com/wp-content/uploads/2021/06/Teeba-Cheese.png', 8),
+('Teeba Labneh', 15, 'https://www.teeba.com/wp-content/uploads/2021/06/Teeba-Labneh.png', 8);
+GO
+
+-- Insert alternative products
+INSERT INTO AlternativeProduct (name, country_of_origin, logo_url, price) VALUES
+('Zamzam Alternative', 'Saudi Arabia', 'https://www.zamzam.com/alt.png', 2.99),
+('Rani Juice', 'UAE', 'https://www.ranijuice.com/wp-content/uploads/2020/06/rani-logo.png', 2.50),
+('Sun Top', 'Lebanon', 'https://www.sun-top.com/wp-content/uploads/2020/06/sun-top-logo.png', 3.00),
+('Barbican', 'UAE', 'https://www.barbican.com/wp-content/uploads/2020/06/barbican-logo.png', 2.75),
+('Fayrouz', 'Egypt', 'https://www.fayrouz.com/wp-content/uploads/2020/06/fayrouz-logo.png', 2.25),
+('Vimto', 'Saudi Arabia', 'https://www.vimto.com/wp-content/uploads/2020/06/vimto-logo.png', 3.50),
+('Mayadin Juice', 'Egypt', 'https://www.mayadinjuice.com/wp-content/uploads/2020/06/mayadin-logo.png', 2.00),
+('Al Rabie Juice',
